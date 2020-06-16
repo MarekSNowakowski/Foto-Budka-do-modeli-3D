@@ -257,7 +257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 80, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475337317
@@ -381,9 +381,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filePaths: []
   currentModelIndex: 0
-  startingIndex: 0
-  currentModel: {fileID: 0}
   modelType: fbx
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  speed: 0.1
+  rotSpeed: 10
+  lerpSpeed: 5
 --- !u!4 &616570764
 Transform:
   m_ObjectHideFlags: 0
@@ -679,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad39dbe2a66c784d981c44f8cddeb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PhotoName: photo
 --- !u!20 &1482775623
 Camera:
   m_ObjectHideFlags: 0
@@ -838,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -150}
+  m_AnchoredPosition: {x: 250, y: -200}
   m_SizeDelta: {x: 80, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684719088
@@ -1044,7 +1048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: -150}
+  m_AnchoredPosition: {x: -250, y: -200}
   m_SizeDelta: {x: 80, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865004821

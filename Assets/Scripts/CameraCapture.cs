@@ -6,7 +6,11 @@ public class CameraCapture : MonoBehaviour
 {
     private Camera cam;
     private int i=1;
- 
+
+    public string PhotoName = "photo";
+
+    private static string pathOut = "Assets/Out/";
+
     void Start () {
         cam = GetComponent<Camera>();
     }
@@ -26,7 +30,7 @@ public class CameraCapture : MonoBehaviour
         byte[] bytes = image.EncodeToPNG();
         Destroy(image);
  
-        File.WriteAllBytes("Assets/Out/photo" + i, bytes);
+        File.WriteAllBytes(pathOut + PhotoName + i + ".png", bytes);
         i++;
     }
 }
