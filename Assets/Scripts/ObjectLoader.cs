@@ -28,13 +28,14 @@ public class ObjectLoader : MonoBehaviour
 
     public void Next()
     {
-        if(currentModelIndex == filePaths.Length)
+        if(currentModelIndex == filePaths.Length - 1)
         {
             currentModelIndex = 0;
         }else
         {
             currentModelIndex += 1;
         }
+        Destroy(currentModel);
         LoadModel();
     }
 
@@ -42,17 +43,18 @@ public class ObjectLoader : MonoBehaviour
     {
         if(currentModelIndex == 0)
         {
-            currentModelIndex = filePaths.Length;
+            currentModelIndex = filePaths.Length - 1;
         }else
         {
             currentModelIndex -= 1;
         }
+        Destroy(currentModel);
         LoadModel();
     }
 
     public void LoadModel()
     {
         currentModel = AssetDatabase.LoadMainAssetAtPath(filePaths[currentModelIndex]);
-        if (currentModel != null) Instantiate(currentModel);
+        if (currentModel != null) currentModel = Instantiate(currentModel);
     }
 }
