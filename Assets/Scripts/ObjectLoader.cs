@@ -67,7 +67,7 @@ public class ObjectLoader : MonoBehaviour
 
     public void Update()
     {
-        positionChange = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), Input.GetAxisRaw("Mouse ScrollWheel"));  //Position
+        positionChange = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), -Input.GetAxisRaw("Mouse ScrollWheel"));  //Position
         positionChange.Normalize();
         positionChange.z *= scroolWheelSpeed;
 
@@ -94,5 +94,12 @@ public class ObjectLoader : MonoBehaviour
     {
         currentModel = AssetDatabase.LoadMainAssetAtPath(filePaths[currentModelIndex]);
         if (currentModel != null) currentModel = Instantiate(currentModel, position, rot);
+    }
+
+    public void ResetPosition()
+    {
+        position = Vector3.zero;
+        rotation = Vector3.zero;
+        rot = Quaternion.identity;
     }
 }
